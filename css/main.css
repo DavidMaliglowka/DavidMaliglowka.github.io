@@ -44,6 +44,7 @@
   border: none;
   padding: 8px 24px;
   color: #fff;
+  text-align: center;
 }
 
 .CTA-button:hover {
@@ -72,10 +73,15 @@
 }
 
 p {
-  font-size: 18px;
+    font-size: 18px;
     color: #060606a1;
     line-height: 1.7;
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
+}
+
+.hey {
+  margin-bottom: 40px;
 }
 
 strong {
