@@ -1,3 +1,39 @@
+# Jekyll build directory (GitHub Pages builds this for you)
 _site/
-.DS_Store
+
+# Jekyll cache
+.jekyll-cache/
 .jekyll-metadata
+.sass-cache/
+
+# Bundler config and gems
+.bundle/
+vendor/bundle/
+
+# Environment configuration
+.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor files
+.idea/
+.cursor/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+
+# Temporary files
+tmp/
+.tmp/
+
+# If using npm/yarn for any frontend tooling
+node_modules/
