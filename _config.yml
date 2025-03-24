@@ -8,11 +8,91 @@ email: david@maliglow.com
 description: >- # this means to ignore newlines until "baseurl:"
   David Maliglowka is a product designer and entrepreneur. Solving problems that matter.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://davidmaliglowka.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 
-permalink: /blog/:year/:month/:day/:title
+whitelist:
+  - jekyll-redirect-from
+
+# Compression settings
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
+# Collections
+collections:
+  my_tags:
+    output: true
+    permalink: /tagged/:slug/
+  projects:
+    output: true
+    permalink: /projects/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: tagged
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# URLs and permalinks
+permalink: /blog/:slug
+timezone: America/New_York
+future: false
+
+# Exclusions
+exclude:
+  - README.md
+  - LICENSE.md
+  - vendor
+
+# Navigation
+nav:
+  - name: 'Home'
+    link: '/'
+  - name: 'Blog'
+    link: '/blog'
+  - name: 'Projects'
+    link: '/projects'
+
+# Tag settings
+tag_page: '/blog/tags'
+tag_title_prefix: 'Posts tagged: '
+
+# Post settings
+excerpt_separator: <!--more-->
+date_format: "%b %-d, %Y"
+
+# Social links
+social:
+  github: DavidMaliglowka
+  email: david@maliglow.com
+
+# Theme settings
+auto_dark_mode: true
+code_highlighting: true
+
+# Add general links to site pages here
+links:
+  # Resume: /assets/resume.pdf
+  
+
+# Add links for more focus here
+special_links:
+  # "Search": https://duckduckgo.com

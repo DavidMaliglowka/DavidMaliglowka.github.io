@@ -1,0 +1,105 @@
+---
+layout: default
+---
+
+<main class="projects-main">
+    <h1>{{ page.title }}</h1>
+    
+    {{ content }}
+
+    <ul class="project-list">
+        {% assign sorted_projects = site.projects | sort: 'status' %}
+        {% assign active_projects = sorted_projects | where: 'status', 'Active' %}
+        {% assign in_development_projects = sorted_projects | where: 'status', 'In Development' %}
+        {% assign concluded_projects = sorted_projects | where: 'status', 'Concluded' %}
+        {% assign deprecated_projects = sorted_projects | where: 'status', 'Deprecated' %}
+
+        {% for project in active_projects %}
+        <li>
+            <div class="project-header">
+                <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+                <span class="project-status">{{ project.status }}</span>
+            </div>
+            {% if project.description %}
+            <p class="project-description">{{ project.description }}</p>
+            {% endif %}
+            {% if project.technologies %}
+            <div class="project-tech">
+                {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+
+        {% for project in in_development_projects %}
+        <li>
+            <div class="project-header">
+                <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+                <span class="project-status">{{ project.status }}</span>
+            </div>
+            {% if project.description %}
+            <p class="project-description">{{ project.description }}</p>
+            {% endif %}
+            {% if project.technologies %}
+            <div class="project-tech">
+                {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+
+        {% for project in concluded_projects %}
+        <li>
+            <div class="project-header">
+                <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+                <span class="project-status">{{ project.status }}</span>
+            </div>
+            {% if project.description %}
+            <p class="project-description">{{ project.description }}</p>
+            {% endif %}
+            {% if project.technologies %}
+            <div class="project-tech">
+                {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+
+        {% for project in deprecated_projects %}
+        <li>
+            <div class="project-header">
+                <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+                <span class="project-status">{{ project.status }}</span>
+            </div>
+            {% if project.description %}
+            <p class="project-description">{{ project.description }}</p>
+            {% endif %}
+            {% if project.technologies %}
+            <div class="project-tech">
+                {% for tech in project.technologies %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% if site.projects_tags.size > 0 %}
+    <div class="project-tags">
+        <small>
+            {% for tag in site.projects_tags %}
+            {% assign tag_slug = tag | first %}
+            {% assign no_of_projects = tag | last | size %}
+            <a href="{{ 'tagged/' | relative_url }}{{ tag_slug }}" title="See all projects by {{ tag_slug }} tag">#{{ tag_slug }}</a>
+            {% endfor %}
+        </small>
+    </div>
+    {% endif %}
+</main> 

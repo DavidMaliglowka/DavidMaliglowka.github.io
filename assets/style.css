@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root,
+:root[style*="color-scheme: light"] {
+    --width: 720px;
+    --font-main: 'Fira Code', monospace;
+    --font-secondary: 'Fira Code', monospace;
+    --font-scale: .95em;
+    --background-color: #faf8f0; /* Warm off-white */
+    --heading-color: #2d1810; /* Deep warm brown */
+    --h1-color: #ff6e50; /* Vibrant coral */
+    --text-color: #433230; /* Soft brown */
+    --link-color: #ff6e50; /* Vibrant coral */
+    --visited-color: #e85c40; /* Darker coral */
+    --main-color: #ff6e50; /* Vibrant coral */
+    --code-background-color: #fff5eb; /* Light peach */
+    --code-color: #2d1810; /* Deep warm brown */
+    --blockquote-color: #ff8f78; /* Light coral */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([style*="color-scheme"]) {
+        --background-color: #1a1616; /* Near black with red tint */
+        --heading-color: #ffeee5; /* Light peach */
+        --h1-color: #ff6e50; /* Vibrant coral */
+        --text-color: #fff5eb; /* Lighter peach */
+        --link-color: #ff6e50; /* Vibrant coral */
+        --visited-color: #ff8f78; /* Light coral */
+        --main-color: #ff6e50; /* Vibrant coral */
+        --code-background-color: #252020; /* Dark with red tint */
+        --code-color: #ffeee5; /* Light peach */
+        --blockquote-color: #ff8f78; /* Light coral */
+    }
+}
+
+:root[style*="color-scheme: dark"] {
+    --background-color: #1a1616; /* Near black with red tint */
+    --heading-color: #ffeee5; /* Light peach */
+    --h1-color: #ff6e50; /* Vibrant coral */
+    --text-color: #fff5eb; /* Lighter peach */
+    --link-color: #ff6e50; /* Vibrant coral */
+    --visited-color: #ff8f78; /* Light coral */
+    --main-color: #ff6e50; /* Vibrant coral */
+    --code-background-color: #252020; /* Dark with red tint */
+    --code-color: #ffeee5; /* Light peach */
+    --blockquote-color: #ff8f78; /* Light coral */
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: var(--font-main);
+    color: var(--h1-color);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+}
+
+.title {
+    color: var(--h1-color);
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.title h1 {
+    font-size: 1.5em;
+    color: var(--h1-color);
+}
+
+a {
+    color: var(--link-color);
+    font-family: var(--font-main);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--background-color);
+    background-color: var(--main-color);
+    text-decoration: none;
+}
+
+header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 3px dotted #232333;
+}
+
+nav a {
+    margin-right: 8px;
+}
+
+strong,
+b {
+    color: var(--heading-color);
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+main {
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed;
+}
+
+img {
+    max-width: 100%;
+}
+
+code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+blockquote {
+    border-left: 1px solid #999;
+    color: var(--code-color);
+    padding-left: 20px;
+    font-style: italic;
+}
+
+header {
+  border-bottom: 3px dotted var(--main-color);
+}
+
+footer {
+    margin-top: 40px;
+    border-top: 3px dotted var(--main-color);
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer > span:has(a[href="https://bearblog.dev"]) {
+    display: none;
+}
+
+.inline {
+    width: auto !important;
+}
+
+.highlight,
+.code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+/* blog post list */
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+i time {
+    font-style: normal;
+    opacity: 0.7;
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
+}
+
+table {
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 6px 13px;
+    font-size: 1em;
+}
+
+/* external link marker */
+a[href^="http"]:where(:not([href*="knhash.in/"])):not(:has(img))::after {
+    content: "↗"
+}
+
+/* Form elements */
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+legend {
+  margin: 20px 0;
+  font-weight: bold;
+}
+label {
+  display: block;
+  font-weight: bold;
+}
+input,
+textarea {
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  color: var(--text-color);
+  background: var(--accent-color);
+  border: 2px solid var(--link-color);
+  border-radius: 5px;
+}
+input {
+  width: 55%;
+}
+textarea {
+  width: 95%;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  margin: 0 0 20px;
+  padding: 7px;
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  color: #ffeee5; /* Light peach instead of white */
+  background: var(--link-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    color: var(--text-color);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 4px;
+}
+
+.theme-toggle:hover {
+    background-color: var(--code-background-color);
+}
+
+/* Project list */
+.project-list {
+    list-style-type: none;
+    padding: unset;
+}
+
+.project-list li {
+    margin-bottom: 2em;
+    padding: 1em;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.project-list li:hover {
+    background-color: var(--code-background-color);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.project-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.project-status {
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.project-description {
+    margin: 0.5em 0;
+    color: var(--text-color);
+}
+
+.project-tech {
+    margin-top: 0.5em;
+}
+
+.tech-tag {
+    display: inline-block;
+    margin-right: 0.5em;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+      
+  

@@ -1,36 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
 <header>
-  <div class="menu-container">
-    <div class="logo">
-      <a href="{{ "/" | relative_url }}">
-        <img src="{{ "/img/david-maliglowka-logo.png" | relative_url }}" alt="David Maliglowka Logo"/>
-      </a>
-    </div>
-    <nav class="display-none">
-      <ul class="menu">
-        <li class="blog">
-          <!-- <a href="{{ "/blog" | relative_url }}">Blog</a> -->
-          <a href="">New Pages Coming Soon</a>
-        </li>
-        <!-- <li class="podcast">
-          <a href="">Podcast</a>
-        </li>
-        <li class="work">
-          <a href="">Work</a>
-        </li> -->
-      </ul>
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌞</button>
+    <h2 class="title">{{ site.title }}</h2>
+    <nav>
+        <p>
+            {% for item in site.nav %}
+                <a href="{{ item.link | relative_url }}">{{ item.name }}</a>
+            {% endfor %}
+            
+            {% for link in site.links %}
+                <a href="{{ site.url }}{{ link[1] }}">{{ link[0] }}</a>
+            {% endfor %}
+            
+            {% for link in site.special_links %}
+                <a href="{{ link[1] }}">[{{ link[0] }}]</a>
+            {% endfor %}
+        </p>
     </nav>
-    <a class="CTA-button display-none" href="mailto:david@maliglow.com">
-      Talk with Me
-    </a>
-    <div class="mobile-menu-trigger">
-      <input id="burger" type="checkbox" >
-        <!-- Hamburger icon -->
-      <label for="burger">
-          <span></span>
-          <span></span>
-          <span></span>
-      </label>
-    </div>
-
-  </div>
 </header>
+
+<script>
+function toggleTheme() {
+    const html = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark') {
+        html.setAttribute('style', 'color-scheme: light');
+        localStorage.setItem('theme', 'light');
+        toggle.textContent = '🌞';
+    } else {
+        html.setAttribute('style', 'color-scheme: dark');
+        localStorage.setItem('theme', 'dark');
+        toggle.textContent = '🌙';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const html = document.documentElement;
+    const toggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+        html.setAttribute('style', `color-scheme: ${savedTheme}`);
+        toggle.textContent = savedTheme === 'dark' ? '🌙' : '🌞';
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (prefersDark) {
+            html.setAttribute('style', 'color-scheme: dark');
+            toggle.textContent = '🌙';
+        } else {
+            html.setAttribute('style', 'color-scheme: light');
+            toggle.textContent = '🌞';
+        }
+    }
+});
+</script>
