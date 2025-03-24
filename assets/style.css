@@ -182,7 +182,7 @@ footer > span:has(a[href="https://bearblog.dev"]) {
     overflow-x: auto;
 }
 
-/* blog post list */
+/* Essays and blog post list */
 ul.blog-posts {
     list-style-type: none;
     padding: unset;
@@ -193,6 +193,10 @@ ul.blog-posts li {
     margin-bottom: 10px;
 }
 
+.essays-main {
+    line-height: 1.6;
+}
+
 i time {
     font-style: normal;
     opacity: 0.7;
@@ -201,7 +205,6 @@ i time {
 ul.blog-posts li span {
     flex: 0 0 130px;
 }
-
 
 ul.blog-posts li a:visited {
     color: var(--visited-color);

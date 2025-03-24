@@ -52,7 +52,7 @@ defaults:
       layout: "project"
 
 # URLs and permalinks
-permalink: /blog/:slug
+permalink: /essays/:slug
 timezone: America/New_York
 future: false
 
@@ -66,14 +66,14 @@ exclude:
 nav:
   - name: 'Home'
     link: '/'
-  - name: 'Blog'
-    link: '/blog'
+  - name: 'Essays'
+    link: '/essays'
   - name: 'Projects'
     link: '/projects'
 
 # Tag settings
-tag_page: '/blog/tags'
-tag_title_prefix: 'Posts tagged: '
+tag_page: '/essays/tags'
+tag_title_prefix: 'Essays tagged: '
 
 # Post settings
 excerpt_separator: <!--more-->
