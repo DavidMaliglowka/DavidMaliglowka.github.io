@@ -19,7 +19,7 @@ We now live in a world where one person can produce more than an entire team.
 But just because you can doesn’t mean you always should. Knowing what to build matters more than ever.
 
 Call me old-fashioned, but my favorite design framework is still the Double Diamond.
-![](Up%20until%2048%20hours%20ago,%20I%E2%80%99d%20never%20maintained%20a%20portfolio./The_Double_Diamond_from_the_Fountain_Institute-min.jpg)
+![](/assets/images/double-diamond.jpg)
 
 The Double Diamond helps you realize that tackling the problem space is just as important as the solution.
 
@@ -40,6 +40,7 @@ My whole life is built around curiosity. I was that kid who skipped class to rea
 When my cousins said curiosity killed the cat, I yelled back, “Good thing cats have nine lives.”
 
 Today, I’m still that curious kid.
+
 # Why do I **♥** the web?
 I am a product of the internet.
 
