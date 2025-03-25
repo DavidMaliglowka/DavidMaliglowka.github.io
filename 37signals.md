@@ -19,6 +19,7 @@ We now live in a world where one person can produce more than an entire team.
 But just because you can doesn’t mean you always should. Knowing what to build matters more than ever.
 
 Call me old-fashioned, but my favorite design framework is still the Double Diamond.
+
 ![](/assets/images/double-diamond.jpg)
 
 The Double Diamond helps you realize that tackling the problem space is just as important as the solution.
