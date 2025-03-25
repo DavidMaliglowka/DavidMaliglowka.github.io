@@ -2,8 +2,13 @@
 <html lang="en" dir="ltr">
     
 <header>
-    <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">🌞</button>
-    <h2 class="title">{{ site.title }}</h2>
+    <div class="header-content">
+        <h2 class="title">{{ site.title }}</h2>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
+            <img src="/assets/design_assets/sun.svg" alt="Light mode" class="theme-icon sun-icon">
+            <img src="/assets/design_assets/moon.svg" alt="Dark mode" class="theme-icon moon-icon">
+        </button>
+    </div>
     <nav>
         <p>
             {% for item in site.nav %}
@@ -25,36 +30,50 @@
 function toggleTheme() {
     const html = document.documentElement;
     const toggle = document.getElementById('theme-toggle');
+    const sunIcon = toggle.querySelector('.sun-icon');
+    const moonIcon = toggle.querySelector('.moon-icon');
     
     const currentTheme = localStorage.getItem('theme');
     
     if (currentTheme === 'dark') {
         html.setAttribute('style', 'color-scheme: light');
         localStorage.setItem('theme', 'light');
-        toggle.textContent = '🌞';
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
     } else {
         html.setAttribute('style', 'color-scheme: dark');
         localStorage.setItem('theme', 'dark');
-        toggle.textContent = '🌙';
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const html = document.documentElement;
     const toggle = document.getElementById('theme-toggle');
+    const sunIcon = toggle.querySelector('.sun-icon');
+    const moonIcon = toggle.querySelector('.moon-icon');
     const savedTheme = localStorage.getItem('theme');
     
     if (savedTheme) {
         html.setAttribute('style', `color-scheme: ${savedTheme}`);
-        toggle.textContent = savedTheme === 'dark' ? '🌙' : '🌞';
+        if (savedTheme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
     } else {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (prefersDark) {
             html.setAttribute('style', 'color-scheme: dark');
-            toggle.textContent = '🌙';
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
         } else {
             html.setAttribute('style', 'color-scheme: light');
-            toggle.textContent = '🌞';
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
         }
     }
 });

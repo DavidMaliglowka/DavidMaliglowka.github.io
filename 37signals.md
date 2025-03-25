@@ -6,9 +6,9 @@ permalink: /37signals
 
 Up until 48 hours ago, I’d never maintained a portfolio.
 
-I could tell you this site was built using Jekyll, GitHub Pages, and classless CSS. Or that I taught myself how to use Spline for animations. But honestly, the tech isn’t the point—the end result is.
+I could tell you this site was built using Jekyll, GitHub Pages, and a whole lot of markdown. Or that I taught myself how to use Spline for animations. But honestly, the tech isn’t the point—the end result is.
 
-Here’s what matters: in just 48 hours, I shipped a personal website, a blog with two posts, a 3D animation, 1,000 words of copy, a resume, and even a 3D-printed monitor arm.
+Here’s what matters: in just 48 hours, I shipped a personal website, a blog with two posts, a 3D animation, 1,500 words of copy, a resume, and even a 3D-printed monitor arm.
 
 All because I want to work for you: 37signals.<a href="#footnote"><sup>†</sup><a>
 
@@ -60,7 +60,7 @@ Tech, design, business—I wanted them all. Why? Because if I wanted that legacy
 
 > “A jack of all trades is a master of none, but often better than a master of one.”
 
-For the past few years, I’ve been the Director of Product at Monarch Gaming.
+For the past few years, I’ve been the Director of Product at Monarch Nascent——a game studio.
 
 I joined them to follow my childhood dream: Build the next Pokémon!
 
@@ -80,9 +80,9 @@ My plan had been to return to my entrepreneurial roots within the next two years
 
 This position is the only position I will apply to. It is the only one I would consider.
 
-When I was in college, I read *Rework*, and it immediately flipped a switch in me. Since then, I’ve advocated at every company I’ve worked at to implement the framework Jason and David laid out:
+When I was in college, I read *Rework*, and it immediately flipped a switch in me. Since then, I’ve advocated at every company I’ve worked at to implement the framework Jason and David laid out: from remote best practices to asynchronous work to team size.
 
-From remote best practices to asynchronous work to team size.In fact, the current benefits at Monarch came from me forwarding the 37signals site to our founders.
+In fact, the current benefits at Monarch came from me forwarding the 37signals site to our founders.
 
 But I’ve never been able to get a company to embody all or even 60% of those principles.
 
