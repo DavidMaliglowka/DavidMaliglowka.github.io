@@ -4,6 +4,10 @@ title: 37 Signals Application
 permalink: /37signals
 ---
 
+<!-- {% include video-player.html 
+  video_url="https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/output.mp4"
+  thumbnail_url="assets/images/double-diamond.jpg" %} -->
+
 Up until 48 hours ago, I’d never maintained a portfolio.
 
 I could tell you this site was built using Jekyll, GitHub Pages, and a whole lot of markdown. Or that I taught myself how to use Spline for animations. But honestly, the tech isn’t the point—the end result is.
@@ -42,7 +46,7 @@ When my cousins said curiosity killed the cat, I yelled back, “Good thing cats
 
 Today, I’m still that curious kid.
 
-# Why do I **♥** the web?
+# Why do I <img src="/assets/design_assets/heart.svg" alt="heart" style="vertical-align: middle; margin-top: -4px;"> the web?
 I am a product of the internet.
 
 When I was 12, my cousin was working on his MFA at Parsons. He was using an Arduino to build magic drumsticks. When the drumsticks hit different colors, they would play different sounds—a whole drum kit on the go.
@@ -98,3 +102,43 @@ I take accountability for my work, and I always act as an owner.
 If you agree that good design is solving the right problems, let’s talk.
 
 <sup id="footnote">†</sup>*Note: The 3D-printed monitor arm is for me, but you get the point.*
+
+
+---
+
+
+## Work I admire
+
+### Products:
+
+These products excel in utility, communication, and delight around their core functions
+
+* [Cleanshot X](https://cleanshot.com/)
+  * Why?
+    * My most used mac utility app
+    * Changed how I think and use screenshots
+    * Design is Communication: Their release notes clearly explain why new features are useful
+* [Coolify](https://coolify.io/)
+    * Why?
+        * Simplified Self Hosting
+        * One click deploys make it easy to host the web
+* [Tally](https://tally.so/) 
+    * Why?
+        *   Made forms fun again
+        *   Found Blue Ocean
+        *   Took something that people use, offered at a fair price with good design, counter positioned against typeform
+* [Family](https://family.co/)
+    * Why?
+        *   First web3 app that isn't scary
+        *   Incredible Interaction & Motion Design
+
+### Landing pages:
+
+These landing pages and product sites excel at copywriting & selling the user
+
+* Truemed
+* [Judy](https://judy.co/)
+* [Last Crumb](https://lastcrumb.com/) 
+    *  Their imagery & copy have convinced people to drop $120 on a box of cookies
+
+

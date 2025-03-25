@@ -1,0 +1,54 @@
+{% comment %}
+  Video Player Include
+  Usage: {% include video-player.html video_url=YOUR_VIDEO_URL thumbnail_url=YOUR_THUMBNAIL_URL %}
+{% endcomment %}
+
+<div class="video-container">
+  <video 
+    class="vertical-video"
+    controls
+    playsinline
+    preload="metadata"
+    poster="{{ include.thumbnail_url | default: include.video_url }}"
+    src="{{ include.video_url }}">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<style>
+.video-container {
+  width: 100%;
+  max-width: 400px; /* Adjust based on your needs */
+  margin: 2rem auto;
+  background: var(--bg-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.vertical-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 9/16; /* Standard vertical video aspect ratio */
+  background: #000;
+  object-fit: cover; /* Ensures thumbnail covers the entire video area */
+}
+
+/* Video controls styling */
+.vertical-video::-webkit-media-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.vertical-video::-webkit-media-controls-panel {
+  display: flex !important;
+  opacity: 1 !important;
+}
+
+/* Ensure video is responsive */
+@media (max-width: 600px) {
+  .video-container {
+    max-width: 100%;
+  }
+}
+</style> 
