@@ -1,18 +1,21 @@
 ---
 layout: page
-title: 37 Signals Application
-permalink: /37signals
+title: "37signals Application"
+description: "A collection of 37signals quotes and insights"
+noindex: true
 ---
 
 <!-- {% include video-player.html 
   video_url="https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/output.mp4"
-  thumbnail_url="assets/images/double-diamond.jpg" %} -->
+  thumbnail_url="assets/images/37signals-thumbnail.jpg"
+  aspect_ratio="9/16"
+  %} -->
 
 Up until 48 hours ago, I’d never maintained a portfolio.
 
 I could tell you this site was built using Jekyll, GitHub Pages, and a whole lot of markdown. Or that I taught myself how to use Spline for animations. But honestly, the tech isn’t the point—the end result is.
 
-Here’s what matters: in just 48 hours, I shipped a personal website, a blog with two posts, a 3D animation, 1,500 words of copy, a resume, and even a 3D-printed monitor arm.
+Here’s what matters: in just 48 hours, I shipped a personal website, a blog with two posts, a 3D animation, 1,500 words of copy, a resume, and even a [3D-printed monitor arm](https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/output.mp4).
 
 All because I want to work for you: 37signals.<a href="#footnote"><sup>†</sup><a>
 
@@ -103,42 +106,105 @@ If you agree that good design is solving the right problems, let’s talk.
 
 <sup id="footnote">†</sup>*Note: The 3D-printed monitor arm is for me, but you get the point.*
 
+---
+
+# Work I've made
+Company: Monarch Nascent | Role: Director of Product
+
+  {% include video-player.html 
+    video_url="https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/logo-compressed.mp4"
+    aspect_ratio="16/9"
+    autoplay=true
+    loop=true 
+    controls=false 
+    %}
+
+### Concept Overview
+A digital pet that you take care of by walking, jogging, or running. Every step you take in the real world generates in-game energy that you can use to level up or interact with your pet.
+
+![](https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/app-store.png)
+
+
+### Development Journey
+We took a game that didn't exist and developed it from a basic v0 version capable of:
+- Showing your pet
+- Banking your steps
+
+into a fully-fledged mobile game with 15 core features:
+
+1. Challenges
+2. Achievements
+3. Streaks
+4. Items
+5. Inventory
+6. Level-Up & Evolutions
+7. Referral Codes
+8. Shop
+9. Banking Rewards
+10. Friends List
+11. Augmentation (Pet Customization)
+12. Nurture Mechanics (Feeding, Playing, Petting)
+13. Step Battles (Competitive Step Tracking)
+14. Arcade Mode (Endless Runner Mini-game)
+15. Adventure Mode (Location-Based Capture the Flag)
+
+![](https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/comparison.png)
+
+It became a 21st-century Tamagotchi that encouraged you to develop healthier habits. Unlike traditional studios that build a game for 5-7 years and then launch, we built this game in real-time alongside our community.
+
+### Role & Contributions
+As Director of Product, I had a hand in almost every feature released. My responsibilities ranged from:
+- Ideation and feature scoping
+- Writing Product Requirements Documents (PRDs)
+- Wireframing and UI design
+- Coordinating technical specifications and QA
+- Drafting and managing release notes
+- Managing App and Play Store releases
+- Collaborating with marketing on go-to-market campaigns
+
+I collaborated closely with talented designers, developers, and 3D artists to bring each feature to life.
+
+### Key Lessons Learned
+We built a highly engaged, cult-like following, with over 200,000 members in our official Discord. This provided unmatched opportunities to interact directly with users. Forever changing how I design. Besides actively talking to users in Discord, I also introduced and wrote weekly Status Reports to keep our community informed and engaged.
 
 ---
 
 
-## Work I admire
+# Work I admire
 
 ### Products:
 
 These products excel in utility, communication, and delight around their core functions
 
 * [Cleanshot X](https://cleanshot.com/)
-  * Why?
-    * My most used mac utility app
-    * Changed how I think and use screenshots
-    * Design is Communication: Their release notes clearly explain why new features are useful
+    * Why?
+        * My most used Mac Utility
+        * Changed how I think and use screenshots
+        * Design is Communication: Their release notes clearly explain why new features are useful
 * [Coolify](https://coolify.io/)
     * Why?
-        * Simplified Self Hosting
-        * One click deploys make it easy to host the web
+        * Simplified self-hosting
+        * One-click deploys make it easy to host the web
 * [Tally](https://tally.so/) 
     * Why?
         *   Made forms fun again
-        *   Found Blue Ocean
-        *   Took something that people use, offered at a fair price with good design, counter positioned against typeform
+        *   Took something that people use, offered at a fair price with good design
+        *   Found their Blue Ocean. Counter-positioned against Typeform moving up market
 * [Family](https://family.co/)
     * Why?
         *   First web3 app that isn't scary
-        *   Incredible Interaction & Motion Design
+        *   Incredible interaction & motion design
 
 ### Landing pages:
 
-These landing pages and product sites excel at copywriting & selling the user
+These landing pages and product sites excel at copywriting & persuading users
 
-* Truemed
+* [Truemed](https://www.truemed.com/)
+    * Their very first site launched with a founder letter. See a [screengrab](https://pub-6ea211192f72462bb7ef23b6525ff38f.r2.dev/CleanShot%202023-05-30%20at%2001.17.05%402x.png) I took 
 * [Judy](https://judy.co/)
+    * Their ability to pinpoint a fear and leverage trust factors is a masterclass in e-commerce
 * [Last Crumb](https://lastcrumb.com/) 
-    *  Their imagery & copy have convinced people to drop $120 on a box of cookies
+    *  Their imagery & copy have convinced people to drop $120 on a box of cookies...genius
 
-
+### Just for fun:
+* [Neal.fun](https://neal.fun/) - novel, viral experiments that make the web fun

@@ -7,11 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
     <link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="{{ site.baseurl }}/assets/favicon.ico" type="image/x-icon">
     <link href='{{ site.baseurl }}/feed.xml' rel='alternate' type='application/atom+xml'>
     <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+    <script src="{{ site.baseurl }}/assets/js/main.js"></script>
 </head>
 
 <body>

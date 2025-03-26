@@ -1,12 +1,21 @@
 {% comment %}
   Video Player Include
-  Usage: {% include video-player.html video_url=YOUR_VIDEO_URL thumbnail_url=YOUR_THUMBNAIL_URL %}
+  Usage example:
+  {% include video-player.html 
+    video_url="path/to/video.mp4"
+    thumbnail_url="path/to/thumbnail.jpg"
+    aspect_ratio="16/9"
+    autoplay=true
+    loop=true
+    controls=false %}
 {% endcomment %}
 
-<div class="video-container">
+<div class="video-container {% if include.aspect_ratio == '16/9' %}horizontal{% else %}vertical{% endif %}">
   <video 
-    class="vertical-video"
-    controls
+    class="video-player"
+    {% if include.controls != false %}controls{% endif %}
+    {% if include.autoplay %}autoplay muted{% endif %}
+    {% if include.loop %}loop{% endif %}
     playsinline
     preload="metadata"
     poster="{{ include.thumbnail_url | default: include.video_url }}"
@@ -18,37 +27,57 @@
 <style>
 .video-container {
   width: 100%;
-  max-width: 400px; /* Adjust based on your needs */
+  max-width: 400px; /* Default max-width for vertical videos */
   margin: 2rem auto;
-  background: var(--bg-color);
+  background: var(--background-color);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.vertical-video {
+.video-container.horizontal {
+  max-width: 800px; /* Wider max-width for horizontal videos */
+}
+
+.video-player {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 9/16; /* Standard vertical video aspect ratio */
-  background: #000;
-  object-fit: cover; /* Ensures thumbnail covers the entire video area */
+  background: transparent;
+  object-fit: contain;
+}
+
+/* Chrome-specific video adjustments */
+.chrome .video-player,
+.video-player.chrome {
+  filter: brightness(1.5) contrast(1.1);
+}
+
+/* Set aspect ratios */
+.vertical .video-player {
+  aspect-ratio: 9/16;
+}
+
+.horizontal .video-player {
+  aspect-ratio: 16/9;
 }
 
 /* Video controls styling */
-.vertical-video::-webkit-media-controls {
-  background-color: rgba(0, 0, 0, 0.5);
+.video-player::-webkit-media-controls {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.vertical-video::-webkit-media-controls-panel {
+.video-player::-webkit-media-controls-panel {
   display: flex !important;
   opacity: 1 !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
 
 /* Ensure video is responsive */
 @media (max-width: 600px) {
   .video-container {
     max-width: 100%;
+    margin: 1rem auto;
   }
 }
 </style> 
