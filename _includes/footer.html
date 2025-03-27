@@ -1,4 +1,16 @@
 <footer class="bottom-footer">
-    <i>Made with curiosity</i>
+    {% if page.layout == 'post' %}
+    <a href="/essays">← Back to all writings</a>
+    <br/><br/>
+    {% endif %}
+    <div class="footer-content">
+        <div class="footer-text">
+            <i>Made with curiosity</i>
+            <a href="https://x.com/DavidMaliglowka" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (formerly Twitter)">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 300 300.251" role="img" aria-hidden="true">
+                    <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"/>
+                </svg>
+            </a>
+        </div>
+    </div>
 </footer>
-
