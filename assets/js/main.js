@@ -1,29 +1,29 @@
-function isChromeBrowser() {
-    const isChromium = window.chrome;
-    const winNav = window.navigator;
-    const vendorName = winNav.vendor;
-    const isOpera = typeof window.opr !== "undefined";
-    const isIEedge = winNav.userAgent.indexOf("Edg") > -1;
-    const isIOSChrome = winNav.userAgent.match("CriOS");
+// function isChromeBrowser() {
+//     const isChromium = window.chrome;
+//     const winNav = window.navigator;
+//     const vendorName = winNav.vendor;
+//     const isOpera = typeof window.opr !== "undefined";
+//     const isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+//     const isIOSChrome = winNav.userAgent.match("CriOS");
 
-    if (isIOSChrome) {
-        console.log('Chrome for iOS detected');
-        return true;
-    }
+//     if (isIOSChrome) {
+//         console.log('Chrome for iOS detected');
+//         return true;
+//     }
     
-    if (isChromium !== null && typeof isChromium !== "undefined" && 
-        vendorName === "Google Inc." && !isOpera && !isIEedge) {
-        console.log('Desktop Chrome detected');
-        console.log('User Agent:', navigator.userAgent);
-        console.log('Vendor:', navigator.vendor);
-        return true;
-    }
+//     if (isChromium !== null && typeof isChromium !== "undefined" && 
+//         vendorName === "Google Inc." && !isOpera && !isIEedge) {
+//         console.log('Desktop Chrome detected');
+//         console.log('User Agent:', navigator.userAgent);
+//         console.log('Vendor:', navigator.vendor);
+//         return true;
+//     }
     
-    console.log('Not Chrome browser');
-    console.log('User Agent:', navigator.userAgent);
-    console.log('Vendor:', navigator.vendor);
-    return false;
-}
+//     console.log('Not Chrome browser');
+//     console.log('User Agent:', navigator.userAgent);
+//     console.log('Vendor:', navigator.vendor);
+//     return false;
+// }
 
 function toggleTheme() {
     const html = document.documentElement;
@@ -48,16 +48,16 @@ function toggleTheme() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Check for Chrome browser
-    if (isChromeBrowser()) {
-        document.documentElement.classList.add('chrome');
-        // Add chrome class to all video elements
-        const videos = document.querySelectorAll('video');
-        console.log('Found video elements:', videos.length);
-        videos.forEach(video => {
-            video.classList.add('chrome');
-            console.log('Added chrome class to video:', video);
-        });
-    }
+    // if (isChromeBrowser()) {
+    //     document.documentElement.classList.add('chrome');
+    //     // Add chrome class to all video elements
+    //     const videos = document.querySelectorAll('video');
+    //     console.log('Found video elements:', videos.length);
+    //     videos.forEach(video => {
+    //         video.classList.add('chrome');
+    //         console.log('Added chrome class to video:', video);
+    //     });
+    // }
 
     const html = document.documentElement;
     const toggle = document.getElementById('theme-toggle');

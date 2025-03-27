@@ -48,10 +48,10 @@
 }
 
 /* Chrome-specific video adjustments */
-.chrome .video-player,
+/* .chrome .video-player,
 .video-player.chrome {
   filter: brightness(1.5) contrast(1.1);
-}
+} */
 
 /* Set aspect ratios */
 .vertical .video-player {
@@ -60,17 +60,6 @@
 
 .horizontal .video-player {
   aspect-ratio: 16/9;
-}
-
-/* Video controls styling */
-.video-player::-webkit-media-controls {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.video-player::-webkit-media-controls-panel {
-  display: flex !important;
-  opacity: 1 !important;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
 
 /* Ensure video is responsive */
