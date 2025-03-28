@@ -9,7 +9,7 @@ title: Hello
 Currently building games at Monarch Nascent. Previously at <a href="https://www.startengine.com/">StartEngine</a>. 
 
 ### Projects:
-* <a href="/projects/promptcost">Promptcost</a>
+* <a href="/projects/promptcost">Prompt Cost</a>
 * <a href="/projects/self-hosting">Self Hosting</a>
 * <a href="/projects/apartment-monitor">Apartment Monitor</a>
 * <a href="/projects/charitable-af">Charitable AF</a>
