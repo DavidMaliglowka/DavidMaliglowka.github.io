@@ -533,4 +533,33 @@ input[type=button], input[type=submit], input[type=reset] {
 }
 /* --- End Modal Styles --- */
 
+/* --- Mobile Adjustments for Modal --- */
+@media (max-width: 768px) { /* Target tablets and smaller */
+    .modal-content {
+        /* Reduce size slightly to ensure space around edges */
+        width: 98vw;
+        height: 88vh;
+        /* Add explicit padding to push iframe away from edges */
+        padding: 15px;
+        box-sizing: border-box; /* Ensure padding is included in width/height */
+    }
+
+    #pokedex-iframe {
+        /* Adjust iframe height since parent now has padding */
+        /* This might not be strictly necessary if height: 100% works with box-sizing */
+        /* height: calc(100% - 30px); /* Example if needed */
+    }
+
+    .modal-close {
+        /* Slightly adjust position if needed */
+        top: 15px;
+        right: 15px;
+        /* Make touch target slightly larger */
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 38px;
+    }
+}
+
       
