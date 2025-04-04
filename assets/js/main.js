@@ -86,4 +86,106 @@ document.addEventListener('DOMContentLoaded', () => {
             moonIcon.style.display = 'none';
         }
     }
+
+    // --- Pokedex Modal Logic ---
+    const pokedexToggle = document.getElementById('pokedex-toggle');
+    const modal = document.getElementById('pokedex-modal');
+    const closeModalButton = document.getElementById('modal-close-button');
+    const pokedexIframe = document.getElementById('pokedex-iframe');
+
+    // --- Configuration ---
+    const pokedexUrl = 'https://pokedex.maliglow.com/';
+    // Automatically get the origin from the URL for verification
+    const pokedexOrigin = new URL(pokedexUrl).origin; // Should be 'https://pokedex.maliglow.com'
+
+    // --- Event Listeners (for opening/closing via click) ---
+    if (pokedexToggle && modal && closeModalButton && pokedexIframe) {
+        // Open modal when the toggle element is clicked
+        pokedexToggle.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Basic check if the URL is set
+            if (pokedexUrl === '') {
+                 alert('Pokedex URL is not configured in main.js!');
+                 return;
+            }
+
+            // Add a timestamp query parameter to bypass browser cache
+            const cacheBustedUrl = `${pokedexUrl}?t=${Date.now()}`;
+            pokedexIframe.src = cacheBustedUrl; // Set iframe source
+
+            modal.classList.add('is-active'); // Show modal
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        // Close modal with the close button
+        closeModalButton.addEventListener('click', () => {
+            closeModal();
+        });
+
+        // Close modal by clicking on the background overlay
+        modal.addEventListener('click', (event) => {
+            // Only close if the click is directly on the modal overlay itself
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    } else {
+        // Log an error if any required modal elements weren't found
+        console.error('Modal elements not found. Check IDs: pokedex-toggle, pokedex-modal, modal-close-button, pokedex-iframe.');
+    }
+
+    // --- Helper Function to Close Modal ---
+    function closeModal() {
+        // Check if elements exist before manipulating them
+        if (modal && pokedexIframe) {
+            modal.classList.remove('is-active'); // Hide modal
+            // Clear iframe src to stop potential background activity (e.g., sounds)
+            // and ensure it reloads fresh next time
+            pokedexIframe.src = 'about:blank';
+            document.body.style.overflow = '';
+        }
+    }
+
+    // --- Listener for Messages from Iframe ---
+    window.addEventListener('message', (event) => {
+        // 1. Verify Origin - IMPORTANT SECURITY STEP
+        if (event.origin !== pokedexOrigin) {
+            // console.warn(`Ignoring message from unexpected origin: ${event.origin}`); // Optional logging
+            return; // Exit if origin doesn't match
+        }
+
+        // 2. Verify Data - Check if it's the message we expect
+        if (event.data === 'escapePressed') {
+            console.log('Received escapePressed message from iframe.');
+            // 3. Check if modal is active before closing
+            const modalIsActive = modal && modal.classList.contains('is-active');
+            if (modalIsActive) {
+                 console.log('Closing modal based on iframe message.');
+                 closeModal();
+            }
+        } else {
+            // console.log(`Received unknown message from ${event.origin}:`, event.data); // Optional logging
+        }
+    });
+
+    // Optional: Close modal with the Escape key (Parent listener)
+    // This might now be redundant if the iframe handles Escape when focused,
+    // but can serve as a fallback if focus is somehow returned to the parent.
+    // It shouldn't cause issues as closeModal checks if the modal is already closed implicitly.
+    window.addEventListener('keydown', (event) => {
+        const modalIsActive = modal && modal.classList.contains('is-active');
+        if (event.key === 'Escape' && modalIsActive) {
+            // Check if focus is potentially inside the iframe - might not be reliable
+            // let isFocusInsideIframe = (document.activeElement === pokedexIframe);
+            // console.log(`Parent Escape key listener. Focus in iframe? ${isFocusInsideIframe}`);
+
+            // Avoid closing if the message listener likely already handled it,
+            // or just let closeModal handle idempotency. For simplicity, just call closeModal.
+             console.log('Parent Escape key listener triggered, closing modal.');
+            closeModal();
+        }
+    });
+    // --- End Pokedex Modal Logic ---
+
 }); 

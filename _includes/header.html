@@ -1,6 +1,12 @@
 <header>
     <div class="header-content">
-        <h2 class="title">{{ site.title }}</h2>
+        <div class="title-container">
+            <h2 class="title">{{ site.title }}</h2>
+            <div class="grass-container" id="pokedex-toggle">
+                <img src="/assets/design_assets/grass.png" alt="Grass" class="grass default-grass">
+                <img src="/assets/design_assets/grass-something-is-there.png" alt="Grass with alert" class="grass hover-grass">
+            </div>
+        </div>
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
             <img src="/assets/design_assets/sun.svg" alt="Light mode" class="theme-icon sun-icon">
             <img src="/assets/design_assets/moon.svg" alt="Dark mode" class="theme-icon moon-icon">

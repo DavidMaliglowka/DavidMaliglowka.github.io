@@ -199,6 +199,13 @@ blockquote {
     font-style: italic;
 }
 
+/* Add this rule for all iframes */
+iframe {
+    background-color: transparent;
+    border: none; /* Ensure no default border */
+    color-scheme: normal;
+}
+
 header {
   border-bottom: 3px dotted var(--main-color);
 }
@@ -412,5 +419,118 @@ input[type=button], input[type=submit], input[type=reset] {
     height: 16px;
     fill:var(--text-color);
 }
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.grass-container {
+    position: relative;
+    width: 50px;
+    height: 40px;
+}
+
+.grass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.default-grass {
+    opacity: 1;
+}
+
+.hover-grass {
+    opacity: 0;
+}
+
+.grass-container:hover .default-grass {
+    opacity: 0;
+}
+
+.grass-container:hover .hover-grass {
+    opacity: 1;
+}
+
+
+/* --- Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed for modal itself */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.modal.is-active {
+    display: flex; /* Show the modal */
+}
+
+.modal-content {
+    position: relative;
+    /* Remove background and border for invisibility */
+    /* background-color: var(--background-color); */
+    /* border: 1px solid var(--main-color); */
+    /* Remove padding that affects the container */
+    /* padding: 20px; */
+    /* Adjust size to better fit Pokedex - try percentage based or larger viewport units */
+    width: 95vw; /* Use viewport width */
+    max-width: 1100px; /* Increase max-width slightly */
+    height: 90vh; /* Use viewport height */
+    /* border-radius: 5px; */ /* Remove border radius */
+    display: flex;
+    flex-direction: column;
+    /* Remove margin: auto; as centering is handled by .modal flex properties */
+    /* margin: auto; */
+    /* Ensure no background/border is inherited */
+    background: none;
+    border: none;
+}
+
+.modal-close {
+    position: fixed; /* Position relative to the viewport */
+    top: 20px;       /* Distance from top */
+    right: 30px;      /* Distance from right */
+    z-index: 1010;   /* Ensure it's above the iframe content */
+    color: #fff;     /* Make it white for visibility on dark overlay */
+    font-size: 35px; /* Make it larger */
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.3); /* Optional: Subtle background for contrast */
+    border-radius: 50%; /* Make it circular */
+    width: 40px;
+    height: 40px;
+    line-height: 40px; /* Center the 'X' */
+    text-align: center; /* Center the 'X' */
+    cursor: pointer;
+    border: none;
+    padding: 0; /* Reset padding */
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--main-color); /* Use theme color on hover */
+    background: rgba(0, 0, 0, 0.5); /* Darken background slightly */
+    text-decoration: none;
+}
+
+#pokedex-iframe {
+    width: 100%;
+    height: 100%; /* Fill the container */
+    border: none; /* Remove default iframe border */
+    /* margin-top: 25px; Remove top margin */
+}
+/* --- End Modal Styles --- */
 
       
