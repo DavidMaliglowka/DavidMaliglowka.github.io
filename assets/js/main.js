@@ -149,51 +149,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Listener for Messages from Iframe ---
     window.addEventListener('message', (event) => {
-        // --- Add Detailed Logs ---
-        console.log('[Parent] Message event received.');
-        console.log('[Parent] Expected Origin:', pokedexOrigin); // Log expected origin
-        console.log('[Parent] Actual event.origin:', event.origin); // Log the actual origin received
-        console.log('[Parent] Actual event.data:', event.data); // Log the actual data received
-        // --- End Detailed Logs ---
-
-
         // 1. Verify Origin - IMPORTANT SECURITY STEP
         if (event.origin !== pokedexOrigin) {
-            console.warn(`[Parent] Ignoring message due to origin mismatch. Expected ${pokedexOrigin}, but got ${event.origin}`); // More specific warning
-            return; // Exit if origin doesn't match
+            // Silently ignore messages from unexpected origins
+            return;
         }
 
         // 2. Verify Data - Check if it's the message we expect
         if (event.data === 'escapePressed') {
-            console.log('[Parent] Received expected "escapePressed" message from iframe.'); // Clarify log source
+            // Optional: Log that the correct message was received
+            // console.log('[Parent] Received escapePressed message from iframe.');
+
             // 3. Check if modal is active before closing
             const modalIsActive = modal && modal.classList.contains('is-active');
-             console.log('[Parent] Checking if modal is active:', modalIsActive); // Log modal state check
             if (modalIsActive) {
-                 console.log('[Parent] Closing modal based on iframe message.'); // Clarify log source
+                 // Optional: Log that the modal is being closed
+                 // console.log('[Parent] Closing modal based on iframe message.');
                  closeModal();
-            } else {
-                 console.log('[Parent] Modal not active, not closing.'); // Log if modal isn't active
             }
-        } else {
-            console.log(`[Parent] Received message, but data ("${event.data}") was not "escapePressed".`); // Log unexpected data
         }
+        // Silently ignore messages with unexpected data
     });
 
-    // Optional: Close modal with the Escape key (Parent listener)
-    // This might now be redundant if the iframe handles Escape when focused,
-    // but can serve as a fallback if focus is somehow returned to the parent.
-    // It shouldn't cause issues as closeModal checks if the modal is already closed implicitly.
+    // --- Optional: Close modal with the Escape key (Parent listener) ---
+    // Keep or remove this listener as desired. It now acts primarily as a fallback
+    // if focus returns to the parent window before Escape is pressed.
     window.addEventListener('keydown', (event) => {
         const modalIsActive = modal && modal.classList.contains('is-active');
         if (event.key === 'Escape' && modalIsActive) {
-            // Check if focus is potentially inside the iframe - might not be reliable
-            // let isFocusInsideIframe = (document.activeElement === pokedexIframe);
-            // console.log(`Parent Escape key listener. Focus in iframe? ${isFocusInsideIframe}`);
-
-            // Avoid closing if the message listener likely already handled it,
-            // or just let closeModal handle idempotency. For simplicity, just call closeModal.
-             console.log('Parent Escape key listener triggered, closing modal.');
+             console.log('Parent Escape key listener triggered, closing modal.'); // Kept this log for now
             closeModal();
         }
     });
