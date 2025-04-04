@@ -149,23 +149,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Listener for Messages from Iframe ---
     window.addEventListener('message', (event) => {
+        // --- Add Detailed Logs ---
+        console.log('[Parent] Message event received.');
+        console.log('[Parent] Expected Origin:', pokedexOrigin); // Log expected origin
+        console.log('[Parent] Actual event.origin:', event.origin); // Log the actual origin received
+        console.log('[Parent] Actual event.data:', event.data); // Log the actual data received
+        // --- End Detailed Logs ---
+
+
         // 1. Verify Origin - IMPORTANT SECURITY STEP
         if (event.origin !== pokedexOrigin) {
-            // console.warn(`Ignoring message from unexpected origin: ${event.origin}`); // Optional logging
+            console.warn(`[Parent] Ignoring message due to origin mismatch. Expected ${pokedexOrigin}, but got ${event.origin}`); // More specific warning
             return; // Exit if origin doesn't match
         }
 
         // 2. Verify Data - Check if it's the message we expect
         if (event.data === 'escapePressed') {
-            console.log('Received escapePressed message from iframe.');
+            console.log('[Parent] Received expected "escapePressed" message from iframe.'); // Clarify log source
             // 3. Check if modal is active before closing
             const modalIsActive = modal && modal.classList.contains('is-active');
+             console.log('[Parent] Checking if modal is active:', modalIsActive); // Log modal state check
             if (modalIsActive) {
-                 console.log('Closing modal based on iframe message.');
+                 console.log('[Parent] Closing modal based on iframe message.'); // Clarify log source
                  closeModal();
+            } else {
+                 console.log('[Parent] Modal not active, not closing.'); // Log if modal isn't active
             }
         } else {
-            // console.log(`Received unknown message from ${event.origin}:`, event.data); // Optional logging
+            console.log(`[Parent] Received message, but data ("${event.data}") was not "escapePressed".`); // Log unexpected data
         }
     });
 
