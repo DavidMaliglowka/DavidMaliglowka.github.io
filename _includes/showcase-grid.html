@@ -1,0 +1,161 @@
+<style>
+  /* --- Showcase Grid Styles --- */
+  .showcase-grid {
+    display: grid;
+    /* Adjust minmax width for desired item size and responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; /* Adjust spacing between grid items */
+    padding: 2rem 0; /* Optional padding around the grid */
+  }
+
+  .showcase-item {
+    position: relative; /* Needed for absolute positioning the overlay */
+    overflow: hidden; /* Hide parts of the overlay extending beyond the item */
+    border-radius: 6px; /* Optional: rounded corners */
+    background-color: var(--code-background-color); /* Fallback background */
+    /* Remove aspect-ratio here, let the video player handle it */
+    /* aspect-ratio: 4 / 3; */
+  }
+
+  /* --- CSS Overrides for video-player within showcase --- */
+  .showcase-item .video-container {
+    /* Override default margins, sizing, and decoration */
+    margin: 0;
+    max-width: 100%; /* Allow it to fill grid item */
+    width: 100%;
+    height: 100%;
+    box-shadow: none;
+    border-radius: 0; /* Or inherit from .showcase-item if needed */
+    background: none; /* Make container transparent */
+  }
+
+  .showcase-item .video-player {
+     /* Ensure video fills the container and covers the area */
+    object-fit: cover; /* Use cover for showcase items */
+    height: 100%; /* Needed with aspect-ratio for container filling */
+    width: 100%;
+  }
+  /* Ensure the specific aspect ratio is enforced if needed (though parent class should work) */
+  .showcase-item .four-three .video-player {
+      aspect-ratio: 4/3;
+  }
+  /* --- End Overrides --- */
+
+  /* Placeholder for items without videos/images */
+  .showcase-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 200px; /* Or ensure height matches aspect ratio */
+      height: 100%; /* Make sure it fills the parent */
+      color: var(--text-color);
+      opacity: 0.7;
+      aspect-ratio: 4 / 3;
+      /* Replace border with outline */
+      /* border: 1px dashed var(--text-color); */
+      outline: 1px dashed var(--text-color);
+      outline-offset: -1px; /* Pull the outline inward slightly */
+      box-sizing: border-box; /* Include outline calculation within size */
+  }
+
+  .showcase-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(40, 40, 40, 0.88);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    box-sizing: border-box;
+    /* Ensure overlay is on top of the video player include */
+    z-index: 2;
+  }
+
+  .showcase-item:hover .showcase-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .showcase-content {
+      position: relative;
+      z-index: 1; /* Keep content above overlay background */
+  }
+
+  .showcase-title {
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1em;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  .showcase-tags span {
+    display: inline-block;
+    background-color: var(--main-color);
+    color: var(--background-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 500;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  :root[style*="color-scheme: dark"] .showcase-tags span {
+      color: var(--code-color);
+  }
+  /* --- End Showcase Grid Styles --- */
+</style>
+
+<div class="showcase-grid">
+  {% comment %}
+    Adjust the source of projects if needed.
+    Assumes projects have front matter: title, video_url, showcase: true
+    Optionally uses thumbnail_url or image_url for poster.
+  {% endcomment %}
+  {% assign showcased_projects = site.projects | where_exp:"item", "item.showcase == true" %}
+
+  {% for project in showcased_projects %}
+    <div class="showcase-item">
+      {% comment %} Determine the poster image url {% endcomment %}
+      {% assign poster_url = project.thumbnail_url | default: project.image_url | default: project.video_url %}
+
+      {% if project.video_url %}
+        {% comment %} Include the video player, passing project data {% endcomment %}
+        {% include video-player.html
+          video_url=project.video_url
+          thumbnail_url=poster_url
+          aspect_ratio="4/3"
+          autoplay=true
+          loop=true
+          controls=false
+        %}
+      {% else %}
+        <!-- Optional: Placeholder if no video -->
+        <div class="showcase-placeholder">No Video</div>
+      {% endif %}
+
+      {% comment %} Keep the overlay logic {% endcomment %}
+      <div class="showcase-overlay">
+        <div class="showcase-content">
+            {% if project.title %}
+             <h3 class="showcase-title">{{ project.title }}</h3>
+            {% endif %}
+            {% if project.tags and project.tags.size > 0 %}
+                <div class="showcase-tags">
+                {% for tag in project.tags limit:3 %}
+                    <span>{{ tag }}</span>
+                {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

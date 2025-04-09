@@ -6,6 +6,7 @@ tech:
   - IoT
   - Python
   - Sensors
+showcase: true
 ---
 
 A smart monitoring system designed for apartment living. Tracks environmental conditions, energy usage, and provides insights for better living conditions and energy efficiency. 

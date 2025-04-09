@@ -6,6 +6,7 @@ technologies:
   - Next.js
   - React 
 link: https://promptcost.com
+showcase: true
 ---
 
 A tool to help techies calculate the cost of their LLM prompts. 

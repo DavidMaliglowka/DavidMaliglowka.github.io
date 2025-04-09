@@ -10,7 +10,15 @@
     controls=false %}
 {% endcomment %}
 
-<div class="video-container {% if include.aspect_ratio == '16/9' %}horizontal{% else %}vertical{% endif %}">
+{% comment %} Determine class based on aspect ratio {% endcomment %}
+{% assign aspect_class = "horizontal" %} {% comment %} Default to horizontal (16/9) {% endcomment %}
+{% if include.aspect_ratio == '9/16' %}
+  {% assign aspect_class = "vertical" %}
+{% elsif include.aspect_ratio == '4/3' %}
+  {% assign aspect_class = "four-three" %}
+{% endif %}
+
+<div class="video-container {{ aspect_class }}">
   <video 
     class="video-player"
     {% if include.controls != false %}controls{% endif %}
@@ -68,5 +76,10 @@
     max-width: 100%;
     margin: 1rem auto;
   }
+}
+
+/* --- Add NEW rule for 4/3 ratio --- */
+.four-three .video-player {
+  aspect-ratio: 4/3;
 }
 </style> 
