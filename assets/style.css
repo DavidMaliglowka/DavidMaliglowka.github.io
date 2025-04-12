@@ -348,13 +348,44 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .project-list li {
     margin-bottom: 2em;
-    padding: 1em;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
+    /* Remove styles that will be applied to the link wrapper */
+    /* padding: 1em; */
+    /* border-radius: 5px; */
+    /* transition: background-color 0.2s ease; */
 }
 
 .project-list li:hover {
-    background-color: var(--code-background-color);
+    /* Remove hover effect from li itself */
+    background-color: transparent;
+}
+
+/* New styles for the link wrapper */
+.project-link-wrapper {
+    display: block; /* Make the link fill the li */
+    color: inherit; /* Inherit text color */
+    text-decoration: none; /* Remove underline */
+    padding: 1em; /* Apply padding here */
+    border-radius: 5px; /* Apply border-radius here */
+    transition: background-color 0.2s ease; /* Apply transition here */
+}
+
+/* Apply hover and focus styles to the link wrapper */
+.project-link-wrapper:hover,
+.project-link-wrapper:focus {
+    background-color: var(--code-background-color); /* Apply hover background */
+    text-decoration: none; /* Ensure no underline */
+    color: inherit; /* Ensure text color doesn't change */
+    outline: none; /* Optional: Remove default focus outline if you add a custom one, ensure visibility */
+}
+
+/* Ensure heading color is maintained inside the link */
+.project-link-wrapper .project-header h2 {
+    color: var(--main-color); /* Use main accent color for project titles */
+}
+
+.project-link-wrapper:hover .project-header h2,
+.project-link-wrapper:focus .project-header h2 {
+    color: var(--main-color); /* Keep main accent color on hover/focus */
 }
 
 .project-header {
