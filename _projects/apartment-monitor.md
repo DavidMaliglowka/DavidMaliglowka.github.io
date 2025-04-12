@@ -12,7 +12,7 @@ Have you ever had your landlord raise your rent?
 
 If you nodded yes, you’re not alone.
 
-Most of the time, you have an opportunity to negotiate. But who holds the better cards: the single tenant who doesn’t want to move, or the complex that manages hundreds—or even thousands—of rental agreements every year?
+Most of the time, you have an opportunity to negotiate. But who holds the cards: the single tenant who doesn’t want to move, or the complex that manages hundreds—or even thousands—of rental agreements every year?
 
 The main difference between you and them—besides owning a building—is data.
 
