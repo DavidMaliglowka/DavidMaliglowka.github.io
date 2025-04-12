@@ -13,7 +13,7 @@
     --link-color: #ff6e50; /* Vibrant coral */
     --visited-color: #e85c40; /* Darker coral */
     --main-color: #ff6e50; /* Vibrant coral */
-    --code-background-color: #fff5eb; /* Light peach */
+    --code-background-color: #f7e7d7; /* Light peach */
     --code-color: #2d1810; /* Deep warm brown */
     --blockquote-color: #ff8f78; /* Light coral */
 }
@@ -27,7 +27,7 @@
         --link-color: #ff6e50; /* Vibrant coral */
         --visited-color: #ff8f78; /* Light coral */
         --main-color: #ff6e50; /* Vibrant coral */
-        --code-background-color: #252020; /* Dark with red tint */
+        --code-background-color: #342b2b; /* Dark with red tint */
         --code-color: #ffeee5; /* Light peach */
         --blockquote-color: #ff8f78; /* Light coral */
     }
@@ -41,7 +41,7 @@
     --link-color: #ff6e50; /* Vibrant coral */
     --visited-color: #ff8f78; /* Light coral */
     --main-color: #ff6e50; /* Vibrant coral */
-    --code-background-color: #252020; /* Dark with red tint */
+    --code-background-color: #342b2b; /* Dark with red tint */
     --code-color: #ffeee5; /* Light peach */
     --blockquote-color: #ff8f78; /* Light coral */
 }
@@ -387,8 +387,13 @@ input[type=button], input[type=submit], input[type=reset] {
 .tech-tag {
     display: inline-block;
     margin-right: 0.5em;
-    color: var(--text-color);
-    opacity: 0.8;
+    margin-bottom: 0.5em; /* Add margin-bottom for better spacing if tags wrap */
+    color: var(--code-color); /* Use code text color */
+    background-color: var(--code-background-color); /* Use code background color */
+    padding: 0.2em 0.6em; /* Add vertical and horizontal padding */
+    border-radius: 1em;  /* Create the pill shape */
+    font-size: 0.85em;   /* Slightly smaller font */
+    opacity: 1; /* Ensure full opacity, overriding previous rule */
 }
 
 .footer-content {
