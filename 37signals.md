@@ -84,9 +84,9 @@ We didn’t rival Pokémon…yet, but I did achieve another goal. I shipped some
 
 To be frank, I always thought Monarch Gaming would be my last job.
 
-My plan had been to return to my entrepreneurial roots within the next two years, but then I was clearing out my inbox.
+I had planned to return to my entrepreneurial roots within the next two years, but then I was clearing out my inbox...and here we are.
 
-This position is the only position I will apply to. It is the only one I would consider.
+This is the only role I will apply to, as 37signals is the only company I would consider.
 
 When I was in college, I read *Rework*, and it immediately flipped a switch in me. Since then, I’ve advocated at every company I’ve worked at to implement the framework Jason and David laid out: from remote best practices to asynchronous work to team size.
 
