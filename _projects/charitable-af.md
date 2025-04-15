@@ -9,6 +9,8 @@ technologies:
 showcase: true
 ---
 
+![CharitableAF Challenge your Friends](/assets/images/charitableaf-challenge.png)
+
 Picture 2020. The world shuts down.
 
 You're locked in your house. You see incredible first responders doing their part to help. You start asking yourself: What can I do?
