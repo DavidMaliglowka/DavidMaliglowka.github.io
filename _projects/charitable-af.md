@@ -5,6 +5,7 @@ status: Concluded
 technologies:
   - Copywriting
   - Design
+  - Vercel
 showcase: true
 ---
 
