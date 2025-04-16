@@ -12,7 +12,7 @@ Currently building games at Monarch Nascent. Previously at <a href="https://www.
 * <a href="/projects/promptcost">Prompt Cost</a>
 * <a href="/projects/self-hosting">Self Hosting</a>
 * <a href="/projects/apartment-monitor">Apartment Monitor</a>
-* <a href="/projects/charitable-af">Charitable AF</a>
+* <a href="/projects/charitable-af">CharitableAF</a>
 
 ### Places I've been:
 * Dublin

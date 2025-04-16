@@ -1,5 +1,5 @@
 ---
-title: Charitable AF
+title: CharitableAF
 description: Making charitable giving more accessible and impactful
 status: Concluded
 technologies:
