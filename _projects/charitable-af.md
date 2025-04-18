@@ -25,6 +25,9 @@ We crafted a landing page that was very different from most products, it made yo
 
 We built a referral system that texted you updates every time someone used your link, showering you with confetti and encouraging GIFs to celebrate your progress.
 
+![CharitableAF Spread the Word - Images on Instagram](/assets/images/charitableaf-social-shares.png)
+
+
 We adopted Vercel's OG-image tool—before Vercel became Vercel. 
 We used it to create custom Open Graph cards that announced, "David challenged you ⚔️". We used the referrer's name in the image to personalize the outreach & spark intrigue the moment their friend received the text. 
 
