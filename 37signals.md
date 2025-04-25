@@ -1,8 +1,8 @@
 ---
 layout: page
 title: "37signals Application"
-description: "A collection of 37signals quotes and insights"
 noindex: true
+sitemap: false
 ---
 
 <!-- {% include video-player.html 

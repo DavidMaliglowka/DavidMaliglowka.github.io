@@ -5,18 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    {% seo %}
     {% if page.noindex %}
     <meta name="robots" content="noindex, nofollow">
     {% endif %}
     <link rel="shortcut icon" href="{{ site.baseurl }}/assets/favicon.ico" type="image/x-icon">
     <link rel="icon" href="{{ site.baseurl }}/assets/favicon.ico" type="image/x-icon">
     <link href='{{ site.baseurl }}/feed.xml' rel='alternate' type='application/atom+xml'>
-    <link rel="canonical" href="{{ site.baseurl }}{{ page.url }}">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="809c4947-4373-4da1-b33d-8fc878a001fc"></script>
+   
+    {% if page.layout == 'post' %}
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        window.TallyConfig = {
+          "formId": "m64r9N",
+          "popup": {
+            "width": 300,
+            "emoji": {
+              "text": "👋",
+              "animation": "wave"
+            },
+            "autoClose": 3000,
+            "open": {
+              "trigger": "scroll",
+              "scrollPercent": 20
+            },
+            "showOnce": true
+          }
+        };
+    </script>
+    {% endif %}
 </head>
-
 <body>

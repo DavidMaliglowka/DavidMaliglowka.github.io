@@ -1,7 +1,9 @@
 ---
 layout: post
 title:  "Mantras"
+description: “Mantras are small phrases with big impact. Here’s a collection of simple, powerful two word mantras—to help guide your actions, mindset, and daily life.”
 date:   2025-03-23 11:00:49 -0800
+version: 1
 tags: [general]
 ---
 
