@@ -1,0 +1,9 @@
+---
+# Empty front matter tells Jekyll to process this file with Liquid
+---
+
+# /robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

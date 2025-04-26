@@ -1,6 +1,7 @@
 ---
 title: CharitableAF
-description: Making charitable giving more accessible and impactful
+description: A social experiment in viral donation matching for COVID-19 relief using personalized Open Graph images, SMS chains, and referral incentives.
+projects-page-description: Making charitable giving more accessible and impactful.
 status: Concluded
 technologies:
   - Copywriting
@@ -9,7 +10,7 @@ technologies:
 showcase: true
 ---
 
-![CharitableAF challenge your friends social banner](/assets/images/charitableaf-challenge.png)
+![CharitableAF social media banner encouraging users to challenge friends to match donations for charity](/assets/images/charitableaf-challenge.png)
 
 Picture 2020. The world shuts down.
 

@@ -16,13 +16,13 @@ layout: default
 
         {% for project in active_projects %}
         <li>
-            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.description %} - {{ project.description }}{% endif %}">
+            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.projects-page-description%} - {{ project.projects-page-description }}{% endif %}">
                 <div class="project-header">
                     <h2>{{ project.title }}</h2>
                     <span class="project-status">{{ project.status }}</span>
                 </div>
-                {% if project.description %}
-                <p class="project-description">{{ project.description }}</p>
+                {% if project.projects-page-description %}
+                <p class="project-description">{{ project.projects-page-description }}</p>
                 {% endif %}
                 {% if project.technologies %}
                 <div class="project-tech">
@@ -37,13 +37,13 @@ layout: default
 
         {% for project in in_development_projects %}
         <li>
-            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.description %} - {{ project.description }}{% endif %}">
+            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.description %} - {{ project.projects-page-description }}{% endif %}">
                 <div class="project-header">
                     <h2>{{ project.title }}</h2>
                     <span class="project-status">{{ project.status }}</span>
                 </div>
-                {% if project.description %}
-                <p class="project-description">{{ project.description }}</p>
+                {% if project.projects-page-description %}
+                <p class="project-description">{{ project.projects-page-description }}</p>
                 {% endif %}
                 {% if project.technologies %}
                 <div class="project-tech">
@@ -58,13 +58,13 @@ layout: default
 
         {% for project in concluded_projects %}
         <li>
-            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.description %} - {{ project.description }}{% endif %}">
+            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.projects-page-description %} - {{ project.projects-page-description }}{% endif %}">
                 <div class="project-header">
                     <h2>{{ project.title }}</h2>
                     <span class="project-status">{{ project.status }}</span>
                 </div>
-                {% if project.description %}
-                <p class="project-description">{{ project.description }}</p>
+                {% if project.projects-page-description %}
+                <p class="project-description">{{ project.projects-page-description }}</p>
                 {% endif %}
                 {% if project.technologies %}
                 <div class="project-tech">
@@ -79,13 +79,13 @@ layout: default
 
         {% for project in deprecated_projects %}
         <li>
-            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.description %} - {{ project.description }}{% endif %}">
+            <a href="{{ project.url }}" class="project-link-wrapper" aria-label="View project: {{ project.title }}{% if project.projects-page-description %} - {{ project.projects-page-description }}{% endif %}">
                 <div class="project-header">
                     <h2>{{ project.title }}</h2>
                     <span class="project-status">{{ project.status }}</span>
                 </div>
-                {% if project.description %}
-                <p class="project-description">{{ project.description }}</p>
+                {% if project.projects-page-description %}
+                <p class="project-description">{{ project.projects-page-description }}</p>
                 {% endif %}
                 {% if project.technologies %}
                 <div class="project-tech">

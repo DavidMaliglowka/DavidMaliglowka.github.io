@@ -4,17 +4,17 @@ title: Hello
 ---
 
 
-# Being Useful | Shipping Products for the Internet
+# Design Engineer | Shipping Products for the Internet
 
-Currently building games at Monarch Nascent. Previously at <a href="https://www.startengine.com/">StartEngine</a>. 
+Currently building ScriptClip. Previously at Monarch Nascent & <a href="https://www.startengine.com/">StartEngine</a>. 
 
-### Projects:
+## Projects:
 * <a href="/projects/promptcost">Prompt Cost</a>
 * <a href="/projects/self-hosting">Self Hosting</a>
 * <a href="/projects/apartment-monitor">Apartment Monitor</a>
 * <a href="/projects/charitable-af">CharitableAF</a>
 
-### Places I've been:
+## Places I've been:
 * Dublin
 * Singapore
 * Hong Kong
