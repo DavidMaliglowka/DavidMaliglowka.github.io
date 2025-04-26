@@ -9,7 +9,7 @@ technologies:
 showcase: true
 ---
 
-![CharitableAF Challenge your Friends](/assets/images/charitableaf-challenge.png)
+![CharitableAF challenge your friends social banner](/assets/images/charitableaf-challenge.png)
 
 Picture 2020. The world shuts down.
 
@@ -25,7 +25,7 @@ We crafted a landing page that was very different from most products, it made yo
 
 We built a referral system that texted you updates every time someone used your link, showering you with confetti and encouraging GIFs to celebrate your progress.
 
-![CharitableAF Spread the Word - Images on Instagram](/assets/images/charitableaf-social-shares.png)
+![Spread the word - social proof of CharitableAF being shared on Instagram stories by multiple users](/assets/images/charitableaf-social-shares.png)
 
 
 We adopted Vercel's OG-image tool—before Vercel became Vercel. 
