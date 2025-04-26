@@ -17,6 +17,12 @@ gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem "jekyll-redirect-from"
+  # Add gem for sitemap generation
+  gem 'jekyll-sitemap'
+  # Add gem for SEO tags
+  gem 'jekyll-seo-tag'
+  # Add gem for Open Graph image generation
+  gem 'jekyll-og-image'
 end
 
 # Add csv gem for Jekyll compatibility with Ruby 3.4
@@ -32,10 +38,10 @@ gem 'webrick'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add gem for sitemap generation
-gem 'jekyll-sitemap'
+# gem 'jekyll-sitemap'
 
 # Add gem for SEO tags
-gem 'jekyll-seo-tag'
+# gem 'jekyll-seo-tag'
 
 # Add gem for Open Graph image generation
-  gem 'jekyll-og-image'
+# gem 'jekyll-og-image'

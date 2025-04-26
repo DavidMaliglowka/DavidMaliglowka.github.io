@@ -108,11 +108,13 @@ og_image:
   canvas:
     background_color: "#faf8f0"
   header:
-    font_family: "'Fira Code', monospace"
+    font_family: "Fira Code"
     color: "#ff6e50"
   content:
-    font_family: "'Fira Code', monospace"
+    font_family: "Fira Code"
     color: "#433230"
+  force: true
+  verbose: true
   border_bottom:
     width: 20
     fill:
