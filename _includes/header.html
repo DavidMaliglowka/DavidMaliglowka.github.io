@@ -3,8 +3,14 @@
         <div class="title-container">
             <h2 class="title">{{ site.title }}</h2>
             <div class="grass-container" id="pokedex-toggle">
-                <img src="/assets/design_assets/grass.png" alt="Grass" class="grass default-grass">
-                <img src="/assets/design_assets/grass-something-is-there.png" alt="Grass with alert" class="grass hover-grass">
+                <picture>
+                    <source srcset="/assets/design_assets/grass.webp" type="image/webp">
+                    <img src="/assets/design_assets/grass.png" alt="Grass" class="grass default-grass">
+                </picture>
+                <picture> 
+                    <source srcset="/assets/design_assets/grass-something-is-there.webp" type="image/webp">
+                    <img src="/assets/design_assets/grass-something-is-there.png" alt="Grass with alert" class="grass hover-grass">
+                </picture>  
             </div>
         </div>
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-toggle">
