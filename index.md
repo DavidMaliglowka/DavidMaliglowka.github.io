@@ -6,7 +6,7 @@ title: Hello
 
 # Design Engineer | Shipping Products for the Internet
 
-Currently building ScriptClip. Previously at Monarch Nascent & <a href="https://www.startengine.com/">StartEngine</a>. 
+Currently at Monarch Nascent. Previously at <a href="https://www.startengine.com/">StartEngine</a>. 
 
 ## Projects:
 * <a href="/projects/promptcost">Prompt Cost</a>
