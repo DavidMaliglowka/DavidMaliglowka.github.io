@@ -64,7 +64,6 @@ exclude:
   - README.md
   - LICENSE.md
   - vendor
-  - assets/images/og/
 
 # Navigation
 nav:
@@ -114,8 +113,8 @@ og_image:
   content:
     font_family: "Fira Code"
     color: "#433230"
-  force: true
-  verbose: true
+  force: false
+  verbose: false
   border_bottom:
     width: 20
     fill:
