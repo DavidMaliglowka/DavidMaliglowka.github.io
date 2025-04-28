@@ -2,7 +2,7 @@
 title: Self Hosting
 description: My journey into self-hosting applications using Linux VPS and Coolify as an open-source alternative to platforms like Vercel and Netlify.
 projects-page-description: My journey into self-hosting services and applications.
-status: Active
+status: Live
 technologies:
   - Linux
   - Coolify

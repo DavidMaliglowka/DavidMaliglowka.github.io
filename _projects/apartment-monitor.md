@@ -1,8 +1,8 @@
 ---
 title: Apartment Monitor
 description: Building Apartment Monitor, a tool using Firecrawl and n8n to track local apartment rental prices and occupancy for better rent negotiation leverage.
-projects-page-description: Monitoring system to track your apartment complex's rent prices.
-status: In Development
+projects-page-description: Track your apartment complex's rent prices.
+status: Tweaking
 technologies:
   - firecrawl
   - n8n

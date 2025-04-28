@@ -5,23 +5,26 @@ layout: default
 <div class="project-main">
     <article class="project">
         <header class="project-header">
-            <h1>{{ page.title }}</h1>
+            <div class="project-header-left">
+                <h1>{{ page.title }}</h1>
+
+                {% if page.projects-page-description %}
+                <p class="project-description">{{ page.projects-page-description }}</p>
+                {% endif %}
+
+                {% if page.technologies %}
+                <div class="project-tech">
+                    {% for tech in page.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
             {% if page.status %}
             <span class="project-status">{{ page.status }}</span>
             {% endif %}
         </header>
-
-        {% if page.projects-page-description %}
-        <p class="project-description">{{ page.projects-page-description }}</p>
-        {% endif %}
-
-        {% if page.technologies %}
-        <div class="project-tech">
-            {% for tech in page.technologies %}
-            <span class="tech-tag">{{ tech }}</span>
-            {% endfor %}
-        </div>
-        {% endif %}
 
         {% if page.link %}
         <p class="project-link">

@@ -2,7 +2,7 @@
 title: Prompt Cost
 description: Prompt Cost is a web application designed to help developers and enthusiasts calculate the estimated cost of their prompts when using Large Language Model (LLM) APIs specifically starting with OpenAI.
 projects-page-description: Calculate the cost of your LLM API calls.
-status: Active
+status: Live
 technologies:
   - Next.js
   - React 

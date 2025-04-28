@@ -9,9 +9,11 @@ layout: default
 
     <ul class="project-list">
         {% assign sorted_projects = site.projects | sort: 'status' %}
-        {% assign active_projects = sorted_projects | where: 'status', 'Active' %}
-        {% assign in_development_projects = sorted_projects | where: 'status', 'In Development' %}
-        {% assign concluded_projects = sorted_projects | where: 'status', 'Concluded' %}
+        {% assign live_projects = sorted_projects | where: 'status', 'Live' %}
+        {% assign ongoing_projects = sorted_projects | where: 'status', 'Ongoing' %}
+        {% assign active_projects = ongoing_projects | concat: live_projects %}
+        {% assign in_development_projects = sorted_projects | where: 'status', 'Tweaking' %}
+        {% assign concluded_projects = sorted_projects | where: 'status', 'Finished' %}
         {% assign deprecated_projects = sorted_projects | where: 'status', 'Deprecated' %}
 
         {% for project in active_projects %}

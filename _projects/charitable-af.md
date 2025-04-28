@@ -2,7 +2,7 @@
 title: CharitableAF
 description: A social experiment in viral donation matching for COVID-19 relief using personalized Open Graph images, SMS chains, and referral incentives.
 projects-page-description: Making charitable giving more accessible and impactful.
-status: Concluded
+status: Finished
 technologies:
   - Copywriting
   - Design

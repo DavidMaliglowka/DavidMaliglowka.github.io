@@ -9,10 +9,12 @@ title: Hello
 Currently at Monarch Nascent. Previously at <a href="https://www.startengine.com/">StartEngine</a>. 
 
 ## Projects:
+* <a href="/projects/david-2.0">David 2.0 - The Health Reboot</a>
 * <a href="/projects/promptcost">Prompt Cost</a>
 * <a href="/projects/self-hosting">Self Hosting</a>
 * <a href="/projects/apartment-monitor">Apartment Monitor</a>
 * <a href="/projects/charitable-af">CharitableAF</a>
+
 
 ## Places I've been:
 * Dublin

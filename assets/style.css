@@ -362,9 +362,17 @@ input[type=button], input[type=submit], input[type=reset] {
     display: block; /* Make the link fill the li */
     color: inherit; /* Inherit text color */
     text-decoration: none; /* Remove underline */
-    padding: 1em; /* Apply padding here */
+    padding: 1em 1em 1em 1em; /* Apply padding here - Increased left padding */
+    margin-left: -1em; /* Shift element left */
     border-radius: 5px; /* Apply border-radius here */
     transition: background-color 0.2s ease; /* Apply transition here */
+}
+
+/* New rule for tech tags on hover */
+.project-link-wrapper:hover .project-tech,
+.project-link-wrapper:focus .project-tech {
+    margin-left: -0.5em;
+    transition: margin-left 0.2s ease; /* Optional: Add smooth transition */
 }
 
 /* Apply hover and focus styles to the link wrapper */
@@ -388,12 +396,42 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .project-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Space between left and right */
+    align-items: center; /* Vertically center status relative to left block */
     margin-bottom: 0.5em;
 }
 
-.project-header h2 {
+article .project-header {
+    padding-bottom: 32px;
+}
+
+/* New rule for the left container */
+.project-header-left {
+    display: flex;
+    flex-direction: column; /* Stack title, desc, tech */
+    /* Add margin-right if needed to space from status */
+    /* margin-right: 1em; */ 
+}
+
+/* Remove rule for title/status line */
+/*
+.project-title-status-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    margin-bottom: 0.5em; 
+}
+*/
+
+/* Specific rule for h1 in project header */
+.project-header h1 {
+    margin: 0;
+}
+
+/* Remove this rule if h2 is not used in project header, or adjust */
+.project-header h2 { 
     margin: 0;
     font-size: 1.2em;
 }
@@ -583,6 +621,44 @@ input[type=button], input[type=submit], input[type=reset] {
 
 /* --- Mobile Adjustments for Modal --- */
 @media (max-width: 768px) { /* Target tablets and smaller */
+    .project-header {
+        /* display: flex; */ /* Override previous flex settings */
+        display: grid;
+        grid-template-columns: 1fr auto; /* Flexible left, auto right */
+        /* align-items: flex-start; */ /* Remove flex alignment */
+        grid-row-gap: 0.5em; /* Add some vertical gap between rows */
+        /* grid-column-gap: 1em; */ /* Optional: Add horizontal gap */
+    }
+
+    /* Make the container disappear, promoting its children to the grid */
+    .project-header-left {
+        display: contents;
+    }
+
+    /* Place grid items */
+    .project-header h1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        align-self: start; /* Align title to start of its cell */
+    }
+
+    .project-status {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+ /* Align status to top right */
+        /* justify-self: end; */ /* Optional: if needed to align right within its column */
+    }
+
+    .project-header .project-description {
+        grid-column: 1 / 3; /* Span both columns */
+        grid-row: 2 / 3;
+    }
+
+    .project-header .project-tech {
+        grid-column: 1 / 3; /* Span both columns */
+        grid-row: 3 / 4;
+    }
+
     .modal-content {
         /* Reduce size slightly to ensure space around edges */
         width: 98vw;
