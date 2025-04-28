@@ -76,7 +76,7 @@ This journey remains ongoing. There's always more to optimize, refine, and track
 
 ## Why share this?
 
-I’ve decided to share this publicly largely because of people like levels.io & Bryan Johnson shared their own metrics & created public discourse that has helped me on my journey. Maybe this will help you.  
+I’ve decided to share this publicly largely because of people like [Pieter Levels](https://x.com/levelsio/status/1764334281143279972?lang=en) & [Bryan Johnson](https://x.com/bryan_johnson). By sharing their own metrics they created a public discourse that has helped me on my journey. Maybe this will help you.  
 
 
 
