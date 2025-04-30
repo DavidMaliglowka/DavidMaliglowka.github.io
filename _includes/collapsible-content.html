@@ -1,0 +1,88 @@
+{% comment %} 
+  Collapsible Content Include
+  Usage:
+  {% capture content_to_collapse %}
+  Your **Markdown** or HTML content here.
+  Multiple lines are fine.
+  It will be collapsed initially.
+  {% endcapture %}
+  {% include collapsible-content.html content=content_to_collapse initial_label="Read More" expanded_label="Read Less" %}
+{% endcomment %}
+
+{% assign content_html = include.content | markdownify %}
+{% assign initial_label = include.initial_label | default: "Read More" %}
+{% assign expanded_label = include.expanded_label | default: "Read Less" %}
+
+<div class="collapsible-container" data-initial-label="{{ initial_label }}" data-expanded-label="{{ expanded_label }}">
+  <div class="collapsible-content-wrapper">
+    <div class="collapsible-content">
+      {{ content_html }}
+    </div>
+  </div>
+  <button class="collapsible-toggle" aria-expanded="false">
+    {{ initial_label }}
+  </button>
+</div>
+
+<style>
+.collapsible-container {
+  border: 2px dashed var(--main-color);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.collapsible-content-wrapper {
+  max-height: 10rem; /* Adjust as needed for ~7.5 lines */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.4s ease-in-out;
+}
+
+/* Fade-out effect for collapsed state */
+.collapsible-content-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3rem; /* Height of the fade */
+  background: linear-gradient(to bottom, transparent, var(--background-color));
+  pointer-events: none; /* Allows clicking through the fade */
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Expanded state */
+.collapsible-container.is-expanded .collapsible-content-wrapper {
+  max-height: 100rem; /* Large value to accommodate content */
+}
+
+.collapsible-container.is-expanded .collapsible-content-wrapper::after {
+  opacity: 0;
+}
+
+.collapsible-toggle {
+  display: block;
+  margin: 1rem auto 0; /* Center button below content */
+  cursor: pointer;
+  padding: 0.5em 1em;
+  background-color: var(--main-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-main);
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.collapsible-toggle:hover {
+  background-color: var(--link-color); /* Use link color for consistency? */
+  filter: brightness(1.1);
+}
+
+/* Ensure code blocks inside don't break layout too much */
+.collapsible-content pre {
+  white-space: pre-wrap; /* Allow wrapping */
+  word-wrap: break-word;
+}
+</style>
