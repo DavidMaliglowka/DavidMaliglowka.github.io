@@ -37,3 +37,7 @@ tmp/
 
 # If using npm/yarn for any frontend tooling
 node_modules/
+
+# Windsurf workflow files
+.windsurf/workflows/security-audit.md
+.windsurf/workflows/eli5.md
