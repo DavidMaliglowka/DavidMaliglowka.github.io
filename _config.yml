@@ -103,6 +103,7 @@ special_links:
 
 # Open Graph Image
 og_image:
+  collections: ["posts", "projects"]
   output_dir: "assets/images/og"
   domain: "davidmaliglowka.com"
   canvas:
@@ -114,7 +115,7 @@ og_image:
     font_family: "Fira Code"
     color: "#433230"
   force: false
-  verbose: false
+  verbose: true
   border_bottom:
     width: 20
     fill:
