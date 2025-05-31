@@ -115,7 +115,7 @@ og_image:
     font_family: "Fira Code"
     color: "#433230"
   force: false
-  verbose: true
+  verbose: false
   border_bottom:
     width: 20
     fill:
